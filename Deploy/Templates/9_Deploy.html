@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+body{
+    background: url("/static/images/A11.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+a.product-link {
+    background: #000;
+    padding: 12px 18px;
+    color: #fff !important;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    width: fit-content;
+}
+a.product-link span {
+    color: #938d8f;
+}
+
+
+main  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.section-main {
+    width: 80%;
+    padding: 50px 0;
+}
+main .section-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+main .section-1 .section-1-main {
+    width: 80%;
+    padding: 50px 0px 0px 0px;
+}
+main .section-1 .section-1-main nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .section-1 .section-1-main nav .nav-logo img, main .section-1 .section-1-main nav .nav-links ul li a img {
+    display: block;
+}
+main .section-1 .section-1-main nav .nav-links ul {
+    display: flex;
+    column-gap: 25px;
+    list-style-type: none;
+    align-items: center;
+}
+main .section-1 .section-1-main nav .nav-links ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
+main .section-1 .section-1-main nav .nav-mobile-menu-btn {
+    cursor: pointer;
+    display: none;
+}
+main .section-1 .section-1-main nav .nav-mobile-menu-btn img {
+    display: block;
+}
+main .section-1 .section-1-main .section-content {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+main .section-1 .section-1-main .section-content .section-1-title {
+    font-size: 40px;
+    line-height: 42px;
+    text-align: center;
+}
+main .section-1 .section-1-main .section-content .section-1-desc, main .section-1 .section-1-main .section-content .section-1-alt-txt {
+    color: #5a5444;
+    line-height: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+main .section-1 .section-1-main .section-content .section-1-img {
+    margin-top: 50px;
+    width: 100%;
+}
+main .section-1 .section-1-main .section-content table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+main .section-1 .section-1-main .section-content th,
+main .section-1 .section-1-main .section-content td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main .section-1 .section-1-main .section-content th.Label,
+main .section-1 .section-1-main .section-content td.Label {
+    position: sticky;
+    right: 0;
+    background-color: #f2f2f2;
+    z-index: 1;
+    max-width: 200px; /* Adjust the max-width as needed for the Label column */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main .section-1 .section-1-main .section-content td:not(.Label),
+main .section-1 .section-1-main .section-content th:not(.Label) {
+    max-width: 100px; /* Set a maximum width for other columns */
+}
+
+main .section-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+main .section-2 .section-2-main {
+    width: 80%;
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+main .section-2 .section-2-main .section-2-1 {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+main .section-2 .section-2-main .section-2-2 {
+    width: 40%;
+}
+main .section-2 .section-2-main .section-2-2 img {
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+nav.mobile-menu {
+    width: fit-content;
+    position: fixed;
+    height: 100vh;
+    background: white;
+    padding: 25px;
+    display: none;
+}
+nav.mobile-menu.active {
+    display: block;
+}
+nav.mobile-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    margin-top: 25px;
+}
+nav.mobile-menu ul li a {
+    text-decoration: none;
+    color: #000;    
+    font-weight: 400;
+}
+
+
+
+footer  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer .footer-main {
+    width: 80%;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+footer .footer-main .footer-content, footer .footer-main .footer-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer-main .footer-content .footer-links ul {
+    display: flex;
+    column-gap: 20px;
+    list-style-type: none;
+}
+footer .footer-main .footer-content .footer-links ul li a, footer .footer-main .footer-text p, footer .footer-main .footer-text p a {
+    text-decoration: none;
+    color: #938d8f;
+    font-weight: 400;
+}
+footer .footer-main .footer-text {
+    justify-content: center;
+}
+footer .footer-main .footer-text p a:hover {
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    main .section-1 .section-1-main, main .section-2 .section-2-main {
+        width: 90%;
+    }
+    main .section-2 .section-2-main {
+        flex-direction: column-reverse;
+        padding: 50px 0px 25px 0px;
+        row-gap: 40px;
+        align-items: center;
+    }
+    main .section-2 .section-2-main .section-2-1 {
+        width: 100%;
+    }
+    main .section-2 .section-2-main .section-2-2 {
+        width: 65%;
+    }
+
+    footer .footer-main {
+        width: 90%;
+        padding: 25px 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    main .section-1 .section-1-main nav .nav-mobile-menu-btn {
+        display: block;
+    }
+    main .section-1 .section-1-main nav .nav-links {
+        display: none;
+    }
+    main .section-2 .section-2-main .section-2-1 {
+        row-gap: 10px;
+    }
+    main .section-2 .section-2-main .section-2-1 .section-2-1-link {
+        margin-top: 10px;
+    }
+    main .section-2 .section-2-main .section-2-2 {
+        width: 90%;
+    }
+
+    main .section-1 .section-1-main {
+        padding-top: 30px;
+    }
+
+    footer .footer-main .footer-content {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}
+.malw{
+   color: #000000; 
+   text-decoration: wavy;
+   font-size: 20px;
+   font-weight: 1000;
+}
+
+
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+label {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-style: italic;
+    background: url("/static/images/A11.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.section-main {
+    width: 80%;
+    padding: 50px 0;
+}
+
+nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: wavy;
+}
+
+.nav-links ul {
+    display: flex;
+    column-gap: 25px;
+    list-style-type: none;
+    align-items: center;
+}
+
+.nav-links ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
+
+.nav-mobile-menu-btn {
+    cursor: pointer;
+    display: none;
+}
+
+.nav-mobile-menu-btn img {
+    display: block;
+}
+
+.section-content {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+}
+
+label {
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+@media only screen and (max-width: 600px) {
+    .nav-links {
+        display: none;
+    }
+
+    .nav-mobile-menu-btn {
+        display: block;
+    }
+
+    .section-main {
+        padding-top: 30px;
+    }
+}
+
+.mobile-menu {
+    width: fit-content;
+    position: fixed;
+    height: 100vh;
+    background: white;
+    padding: 25px;
+    display: none;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    margin-top: 25px;
+}
+
+.mobile-menu ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
+
+/* Add more styles as needed */
+.head{
+    color: #fff;
+}
+</style>
+<body>
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#" class="product-link">Get Started &#8211; <span>It's free</span></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section-1">
+            <div class="section-1-main">
+                <nav>
+                    <div class="nav-logo">
+                        <a class="malw" href="{% url 'Home_4' %}">PENETRATION cloud</a>
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="{% url 'Home_4' %}">Home</a></li>
+                            <li><a href="{% url 'Teamates_5' %}">Contributers</a></li>
+                            <li><a href="{% url 'Domain_Result_6' %}">Domain Results</a></li>
+                            <li><a href="{% url 'Per_Info_8' %}">Info</a></li>
+                            <li><a href="{% url 'Deploy_9' %}">Model</a></li>
+                            <li><a href="{% url 'Per_Database_10' %}">Database</a></li>
+                            <li><a href="{% url 'Logout' %}" class="product-link">Logout </a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-mobile-menu-btn">
+                        <img src="" alt="" id="mobile-menu-btn">
+                    </div>
+                </nav>
+                <div class="section-content">
+                    <h1>User Prediciton Model</h1>
+                    {% if prediction %}
+                        <h1 class="head">Prediction Result: {{ prediction }}</h1>
+                    {% endif %}
+                    <form method="post">
+                        {% csrf_token %}
+                        <!-- Add input fields for each feature -->
+                        <label for="VMID">VMID</label>
+                        <input type="number" name="VMID" required>
+
+                        <label for="rxbytes_slope">rxbytes_slope</label>
+                        <input type="number" name="rxbytes_slope" required>
+
+                        <label for="rxpackets_slope">rxpackets_slope</label>
+                        <input type="number" name="rxpackets_slope" required>
+
+                        <label for="rxerrors_slope">rxerrors_slope</label>
+                        <input type="number" name="rxerrors_slope" required>
+
+                        <label for="rxdrops_slope">rxdrops_slope</label>
+                        <input type="number" name="rxdrops_slope" required>
+
+                        <label for="txbytes_slope">txbytes_slope</label>
+                        <input type="number" name="txbytes_slope" required>
+
+                        <label for="txpackets_slope">txpackets_slope</label>
+                        <input type="number" name="txpackets_slope" required>
+
+                        <label for="txerrors_slope">txerrors_slope</label>
+                        <input type="number" name="txerrors_slope" required>
+
+                        <label for="txdrops_slope">txdrops_slope</label>
+                        <input type="number" name="txdrops_slope" required>
+
+                        <label for="timecpu_slope">timecpu_slope</label>
+                        <input type="number" name="timecpu_slope" required>
+
+                        <label for="timesys_slope">timesys_slope</label>
+                        <input type="number" name="timesys_slope" required>
+
+                        <label for="timeusr_slope">timeusr_slope</label>
+                        <input type="number" name="timeusr_slope" required>
+
+                        <label for="state_slope">state_slope</label>
+                        <input type="number" name="state_slope" required>
+
+                        <label for="memmax_slope">memmax_slope</label>
+                        <input type="number" name="memmax_slope" required>
+
+                        <label for="mem_slope">mem_slope</label>
+                        <input type="number" name="mem_slope" required>
+
+                        <label for="cpus_slope">cpus_slope</label>
+                        <input type="number" name="cpus_slope" required>
+
+                        <label for="cputime_slope">cputime_slope</label>
+                        <input type="number" name="cputime_slope" required>
+
+                        <label for="memactual_slope">memactual_slope</label>
+                        <input type="number" name="memactual_slope" required>
+
+                        <label for="memswap_in_slope">memswap_in_slope</label>
+                        <input type="number" name="memswap_in_slope" required>
+
+                        <label for="memswap_out_slope">memswap_out_slope</label>
+                        <input type="number" name="memswap_out_slope" required>
+
+                        <label for="memmajor_fault_slope">memmajor_fault_slope</label>
+                        <input type="number" name="memmajor_fault_slope" required>
+
+                        <label for="memminor_fault_slope">memminor_fault_slope</label>
+                        <input type="number" name="memminor_fault_slope" required>
+
+                        <label for="memunused_slope">memunused_slope</label>
+                        <input type="number" name="memunused_slope" required>
+
+                        <label for="memavailable_slope">memavailable_slope</label>
+                        <input type="number" name="memavailable_slope" required>
+
+                        <label for="memusable_slope">memusable_slope</label>
+                        <input type="number" name="memusable_slope" required>
+
+                        <label for="memlast_update_slope">memlast_update_slope</label>
+                        <input type="number" name="memlast_update_slope" required>
+
+                        <label for="memdisk_cache_slope">memdisk_cache_slope</label>
+                        <input type="number" name="memdisk_cache_slope" required>
+
+                        <label for="memhugetlb_pgalloc_slope">memhugetlb_pgalloc_slope</label>
+                        <input type="number" name="memhugetlb_pgalloc_slope" required>
+
+                        <label for="memhugetlb_pgfail_slope">memhugetlb_pgfail_slope</label>
+                        <input type="number" name="memhugetlb_pgfail_slope" required>
+
+                        <label for="memrss_slope">memrss_slope</label>
+                        <input type="number" name="memrss_slope" required>
+
+                        <label for="vdard_req_slope">vdard_req_slope</label>
+                        <input type="number" name="vdard_req_slope" required>
+
+                        <label for="vdard_bytes_slope">vdard_bytes_slope</label>
+                        <input type="number" name="vdard_bytes_slope" required>
+
+                        <label for="vdawr_reqs_slope">vdawr_reqs_slope</label>
+                        <input type="number" name="vdawr_reqs_slope" required>
+
+                        <label for="vdawr_bytes_slope">vdawr_bytes_slope</label>
+                        <input type="number" name="vdawr_bytes_slope" required>
+
+                        <label for="vdaerror_slope">vdaerror_slope</label>
+                        <input type="number" name="vdaerror_slope" required>
+
+                        <label for="hdard_req_slope">hdard_req_slope</label>
+                        <input type="number" name="hdard_req_slope" required>
+
+                        <label for="hdard_bytes_slope">hdard_bytes_slope</label>
+                        <input type="number" name="hdard_bytes_slope" required>
+
+                        <label for="hdawr_reqs_slope">hdawr_reqs_slope</label>
+                        <input type="number" name="hdawr_reqs_slope" required>
+
+                        <label for="hdawr_bytes_slope">hdawr_bytes_slope</label>
+                        <input type="number" name="hdawr_bytes_slope" required>
+
+                        <label for="hdaerror_slope">hdaerror_slope</label>
+                        <input type="number" name="hdaerror_slope" required>
+
+                    
+        
+                        <!-- Submit Button -->
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+<script>
+const navEl = document.getElementById("mobile-menu-btn");
+const nav = document.getElementsByTagName("nav");
+
+navEl.addEventListener("click", () => {
+    nav[0].classList.toggle("active");
+});
+
+</script>
+</html>

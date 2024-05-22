@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300|Quicksand');
+
+/* väripaletti
+https://flatuicolors.com/palette/cn 
+*/
+
+html, body {
+  width:100%;
+  margin:0 auto;
+  background-color:#000000;
+  position:fixed;
+  font-family:'Open Sans Condensed', sans-serif;
+  overflow:hidden;
+}
+
+#taustakuva {
+  position:fixed;
+  top:50%;
+  left:50%;
+  min-width:100%;
+  min-height:100%;
+  width:auto;
+  height:auto;
+  z-index:-100;
+  transform:translateX(-10%) tranlateY(-10%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  background:url('/static/images/A95.jpg');
+  background-size:cover;
+  overflow:hidden;
+  filter:blur(0.4em);
+}
+
+.alusta {
+  position:fixed;
+  top:35%;
+  width:100%;
+  height:100%;
+  margin:0 auto;
+  
+}
+
+.alusta #sisalto {
+  margin:0 auto;
+  position:relative;
+  max-width:900px;
+  width:100%;
+  min-height:35px;
+  height:100%;
+  text-align:center;
+}
+
+.alusta #sisalto .otsikko {
+  font-family:'Open Sans Condensed', sans-serif;
+  color:#dfe4ea;
+  font-size:300%;
+  text-transform:uppercase;
+  text-shadow:4px 4px 50px rgba(255,255,255, 1);
+  padding:0;
+  margin:0;
+}
+
+.alusta #sisalto .otsikko span {
+  cursor:pointer;
+  font-size:2em;
+}
+
+.alusta #sisalto p {
+  font-family:'Open Sans Condensed', sans-serif;
+  font-size:2.3em;
+  letter-spacing:0.4em;
+  text-transfor:uppercase;
+  margin:0 auto;
+  padding:0;
+  color:#ced6e0;
+}
+
+.alusta #sisalto .nappi {
+  background:#dfe4ea;
+  width:7.3em;
+  height:7.3em;
+  border-radius:50% 25%;
+  margin:2em auto;
+  padding:0;
+  opacity:0.8;
+  border:none;
+  font-family:'Open Sans Condensed', sans-serif;
+  font-size:1.15em;
+  text-shadow:3px 3px 30px rgba(0,0,0, 0.5);
+  box-shadow:4px 4px 80px rgba(255,255,255, 0.5);
+  cursor:pointer;
+}
+
+.alusta #sisalto .otsikko:hover {
+  animation:expand 1.6s infinite;
+  -webkit-animation:expand 1.6s infinite;
+  animation-timing-function:ease-in-out;
+  animation-direction:alternate;
+}
+
+.alusta #sisalto .nappi:hover {
+  animation:swap 0.6s ease-in-out infinite;
+  -webkit-animation:swap 0.6s infinite;
+  animation-timing-function:ease-in-out;
+  animation-direction:alternate;
+}
+
+@-webkit-keyframes swap {
+  0% {
+    color:#a4b0be;
+    padding:0%;
+  }
+  100% {
+    color:#2f3542;
+    padding:5%;
+    background:#ced6e0;
+  }
+}
+
+@-webkit-keyframes expand {
+  0%, 100% {
+    font-size:3em;
+  }
+  50% {
+    letter-spacing:0.2em;
+  }
+}
+</style>
+<body>
+    <video autoplay loop muted poster="/static/images/A6.jpg" id="taustakuva">
+        <source src="/static/images/B1.gif" type="video/mp4/jpg">
+      </video>
+      <div class="alusta">
+        <div id="sisalto">
+          <div class="otsikko">
+            <span>PENETRATION DETECTION IN CLOUD </span>
+          </div>
+          <p>Using Machine Learning</p>
+          <a href="{% url 'Register_2' %}">
+            <button class="nappi">EXPLORE</button>
+          </a>
+        </div>
+      </div>
+            
+</body>
+</html>

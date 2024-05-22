@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+
+
+a.product-link {
+    background: #000;
+    padding: 12px 18px;
+    color: #fff !important;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    width: fit-content;
+}
+a.product-link span {
+    color: #938d8f;
+}
+
+
+main  {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+main .section-1 {
+    width: 100%;
+    background: url("/static/images/A70.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+}
+main .section-1 .section-1-main {
+    width: 80%;
+    padding: 50px 0px 0px 0px;
+}
+main .section-1 .section-1-main nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main .section-1 .section-1-main nav .nav-logo img, main .section-1 .section-1-main nav .nav-links ul li a img {
+    display: block;
+}
+main .section-1 .section-1-main nav .nav-links ul {
+    display: flex;
+    column-gap: 25px;
+    list-style-type: none;
+    align-items: center;
+}
+main .section-1 .section-1-main nav .nav-links ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: 400;
+}
+main .section-1 .section-1-main nav .nav-mobile-menu-btn {
+    cursor: pointer;
+    display: none;
+}
+main .section-1 .section-1-main nav .nav-mobile-menu-btn img {
+    display: block;
+}
+main .section-1 .section-1-main .section-content {
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+}
+main .section-1 .section-1-main .section-content .section-1-title {
+    font-size: 40px;
+    line-height: 42px;
+    text-align: center;
+}
+main .section-1 .section-1-main .section-content .section-1-desc, main .section-1 .section-1-main .section-content .section-1-alt-txt {
+    color: #5a5444;
+    line-height: 24px;
+    font-weight: 500;
+    text-align: center;
+}
+main .section-1 .section-1-main .section-content .section-1-img {
+    margin-top: 50px;
+    width: 100%;
+}
+
+main .section-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+main .section-2 .section-2-main {
+    width: 80%;
+    padding: 50px 0px;
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+main .section-2 .section-2-main .section-2-1 {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+main .section-2 .section-2-main .section-2-2 {
+    width: 40%;
+}
+main .section-2 .section-2-main .section-2-2 img {
+    width: 100%;
+}
+
+
+nav.mobile-menu {
+    width: fit-content;
+    position: fixed;
+    height: 100vh;
+    background: white;
+    padding: 25px;
+    display: none;
+}
+nav.mobile-menu.active {
+    display: block;
+}
+nav.mobile-menu ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+    margin-top: 25px;
+}
+nav.mobile-menu ul li a {
+    text-decoration: none;
+    color: #000;    
+    font-weight: 400;
+}
+
+
+
+footer  {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+footer .footer-main {
+    width: 80%;
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+footer .footer-main .footer-content, footer .footer-main .footer-text {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+footer .footer-main .footer-content .footer-links ul {
+    display: flex;
+    column-gap: 20px;
+    list-style-type: none;
+}
+footer .footer-main .footer-content .footer-links ul li a, footer .footer-main .footer-text p, footer .footer-main .footer-text p a {
+    text-decoration: none;
+    color: #938d8f;
+    font-weight: 400;
+}
+footer .footer-main .footer-text {
+    justify-content: center;
+}
+footer .footer-main .footer-text p a:hover {
+    text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 1024px) {
+    main .section-1 .section-1-main, main .section-2 .section-2-main {
+        width: 90%;
+    }
+    main .section-2 .section-2-main {
+        flex-direction: column-reverse;
+        padding: 50px 0px 25px 0px;
+        row-gap: 40px;
+        align-items: center;
+    }
+    main .section-2 .section-2-main .section-2-1 {
+        width: 100%;
+    }
+    main .section-2 .section-2-main .section-2-2 {
+        width: 65%;
+    }
+
+    footer .footer-main {
+        width: 90%;
+        padding: 25px 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+
+    main .section-1 .section-1-main nav .nav-mobile-menu-btn {
+        display: block;
+    }
+    main .section-1 .section-1-main nav .nav-links {
+        display: none;
+    }
+    main .section-2 .section-2-main .section-2-1 {
+        row-gap: 10px;
+    }
+    main .section-2 .section-2-main .section-2-1 .section-2-1-link {
+        margin-top: 10px;
+    }
+    main .section-2 .section-2-main .section-2-2 {
+        width: 90%;
+    }
+
+    main .section-1 .section-1-main {
+        padding-top: 30px;
+    }
+
+    footer .footer-main .footer-content {
+        flex-direction: column;
+        row-gap: 10px;
+    }
+}
+.malw{
+   color: #000000; 
+   text-decoration: wavy;
+   font-size: 20px;
+   font-weight: 1000;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 150%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #4a1bb7;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #29158e;
+}
+</style>
+<body>
+    <nav class="mobile-menu">
+        <ul>
+            <li><a href="#">Sign In</a></li>
+            <li><a href="#" class="product-link">Get Started &#8211; <span>It's free</span></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="section-1">
+            <div class="section-1-main">
+                <nav>
+                    <div class="nav-logo">
+                        <a class="malw" href="{% url 'Home_4' %}">Malware Memory Dump</a>
+                    </div>
+                    <div class="nav-links">
+                        <ul>
+                            <li><a href="{% url 'Home_4' %}">Home</a></li>
+                            <li><a href="{% url 'Teamates_5' %}">Contributers</a></li>
+                            <li><a href="{% url 'Domain_Result_6' %}">Domain Results</a></li>
+                            <li><a href="{% url 'Per_Info_8' %}">Info</a></li>
+                            <li><a href="{% url 'Deploy_9' %}">Model</a></li>
+                            <li><a href="{% url 'Per_Database_10' %}">Database</a></li>
+                            <li><a href="{% url 'Logout' %}" class="product-link">Logout </a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-mobile-menu-btn">
+                        <img src="" alt="" id="mobile-menu-btn">
+                    </div>
+                </nav>
+                <div class="section-content">
+
+    <h1>Enter User Personal Information</h1>
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="id_firstname">First Name:</label>
+        <input type="text" name="firstname" id="id_firstname" required>
+
+        <label for="id_lastname">Last Name:</label>
+        <input type="text" name="lastname" id="id_lastname" required>
+
+        <label for="id_age">Age:</label>
+        <input type="number" name="age" id="id_age" required>
+
+        <label for="id_address">Address:</label>
+        <textarea name="address" id="id_address"></textarea>
+
+        <label for="id_phone">Phone:</label>
+        <input type="tel" name="phone" id="id_phone" required>
+
+        <label for="id_city">City:</label>
+        <input type="text" name="city" id="id_city" required>
+
+        <label for="id_state">State:</label>
+        <input type="text" name="state" id="id_state" required>
+
+        <label for="id_country">Country:</label>
+        <input type="text" name="country" id="id_country" required>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- Display existing content or add more HTML as needed -->
+
+                </div>
+            </div>
+        </section>
+
+</script>
+</html>
